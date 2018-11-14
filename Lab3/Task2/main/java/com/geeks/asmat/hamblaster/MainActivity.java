@@ -29,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void buttonCallLogClick(View view)
     {
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse("content://call_log/calls/1"));
-        startActivity(i);
+        Intent showCallLog = new Intent();
+        showCallLog.setAction(Intent.ACTION_VIEW);
+        showCallLog.setType(CallLog.Calls.CONTENT_TYPE);
+        startActivity(showCallLog);
     }
     public void buttonBrowserClick(View view)
     {
